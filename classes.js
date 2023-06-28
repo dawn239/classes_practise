@@ -19,6 +19,10 @@ class Teachers {
         return this._department;
     }
 
+    get remainingHolidays() {
+        return this._remainingHolidays;
+    }
+
     incrementExperience() {
         this._experience++;
     }
@@ -32,7 +36,10 @@ const mrSmith = new Teachers('Tom Smith', 'Maths', 4);
 const missDavis = new Teachers('Sally Davis', 'French', 7);
 const mrsMurray = new Teachers('Katie Murray', 'Art', 2);
 
-console.log(mrSmith._name);
-console.log(missDavis._department);
-console.log(mrsMurray._experience);
+console.log(mrSmith.name);
+console.log(missDavis.department);
+console.log(mrsMurray.experience); //use method rather than directly accessing
+
+mrSmith.takeOffHoliday(2);    //take two off original five holidays
+console.log(mrSmith._remainingHolidays);  //should log 3
 
